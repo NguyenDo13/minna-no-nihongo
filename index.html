@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+    <title>Minna no Nihongo</title>
+    <link rel="stylesheet"
+        href="https://fonts.googleapis.com/css2?family=Be+Vietnam+Pro:wght@400;600;700&family=Zen+Maru+Gothic:wght@500;700&display=swap">
+    <link rel="stylesheet" href="assets/style.css">
+    <style>
+        .gr {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(112px, 1fr));
+            gap: 10px;
+            margin-bottom: 28px
+        }
+
+        .cl {
+            position: relative;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-between;
+            gap: 6px;
+            min-height: 96px;
+            padding: 10px 12px 12px;
+            border: 1px solid var(--ln);
+            border-radius: 10px;
+            background: var(--sf);
+            color: var(--ink);
+            text-decoration: none;
+            overflow: hidden
+        }
+
+        .cl b {
+            font-size: 1.7rem;
+            line-height: 1
+        }
+
+        .cl span {
+            font-size: .8rem;
+            color: var(--mut);
+            line-height: 1.35
+        }
+
+        .cl.on {
+            border-color: var(--blue)
+        }
+
+        .cl.off {
+            border-style: dashed;
+            opacity: .5
+        }
+
+        .cl i {
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            height: 4px;
+            width: var(--p);
+            background: var(--ok)
+        }
+
+        .go {
+            display: inline-block;
+            margin-top: 14px;
+            text-decoration: none
+        }
+
+        main {
+            padding-top: 22px
+        }
+    </style>
+</head>
+
+<body>
+    <header>
+        <div class="wrap">
+            <h1 class="jp">みんなの日本語</h1>
+            <p id="st"></p>
+            <div class="bar" role="img" aria-label="Số bài đã có"><i id="bar"></i></div>
+            <div id="go"></div>
+        </div>
+    </header>
+    <main class="wrap">
+        <h2>Sơ cấp I</h2>
+        <p class="sub">Bài 1 đến 25</p>
+        <div class="gr" id="g1"></div>
+        <h2>Sơ cấp II</h2>
+        <p class="sub">Bài 26 đến 50</p>
+        <div class="gr" id="g2"></div>
+    </main>
+    <script src="lessons.js"></script>
+    <script>
+        var $ = function (s) { return document.querySelector(s) }, T = 50, have = 0, got = 0, tot = 0;
+        function cell(n) {
+            var name = LESSONS[n], m = null;
+            if (!name) return '<div class="cl off"><b class="jp">' + n + '</b></div>';
+            try { m = JSON.parse(localStorage.getItem("mnn" + n + "s") || "null") } catch (e) { }
+            have++; if (m && m[1]) { got += m[0]; tot += m[1] }
+            return '<a class="cl on" href="bai-' + n + '/index.html"><b class="jp">' + n + '</b><span>' + name + '</span><i style="--p:' + (m && m[1] ? Math.round(m[0] / m[1] * 100) : 0) + '%"></i></a>'
+        }
+        function grp(a, b) { var h = ""; for (var n = a; n <= b; n++)h += cell(n); return h }
+        $("#g1").innerHTML = grp(1, 25); $("#g2").innerHTML = grp(26, 50);
+        $("#st").textContent = "Đã có " + have + " / " + T + " bài" + (tot ? ", thuộc " + got + " / " + tot + " từ vựng" : "");
+        $("#bar").style.width = Math.round(have / T * 100) + "%";
+        try { var last = localStorage.getItem("mnnlast"); if (last && LESSONS[last]) $("#go").innerHTML = '<a class="go" href="bai-' + last + '/index.html">Học tiếp bài ' + last + '</a>' } catch (e) { }
+    </script>
+</body>
+
+</html>
