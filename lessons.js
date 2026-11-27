@@ -5,5 +5,6 @@ var LESSONS={
 34:"Làm theo đúng như, sau khi và làm mà không",
 35:"Thể điều kiện ば, なら và tục ngữ",
 36:"〜ように: mục đích, thay đổi, cố gắng",
-37:"Thể bị động"
+37:"Thể bị động",
+38:"Danh từ hóa với の"
 };
