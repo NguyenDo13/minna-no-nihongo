@@ -7,5 +7,6 @@ var LESSONS={
 36:"〜ように: mục đích, thay đổi, cố gắng",
 37:"Thể bị động",
 38:"Danh từ hóa với の",
-39:"Nguyên nhân với 〜て, 〜ので"
+39:"Nguyên nhân với 〜て, 〜ので",
+40:"Câu nghi vấn lồng, 〜てみます"
 };
