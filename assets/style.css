@@ -95,3 +95,13 @@ a.chip{text-decoration:none;color:inherit}
 .ctw .vi{margin:0 0 8px}
 .ctw .ba{margin:0;font-size:.88rem;color:var(--mut)}
 .ctw .ba b{color:var(--ink);font-size:1rem}
+.habs{display:grid;gap:12px;margin-bottom:22px}
+@media(min-width:720px){.habs{grid-template-columns:1fr 1fr}}
+.hab{--c:hsl(var(--h) 55% 42%);border:1px solid color-mix(in srgb,var(--c) 40%,var(--ln));border-radius:14px;background:color-mix(in srgb,var(--c) 9%,var(--sf));padding:14px 16px}
+.hab h3{display:flex;align-items:center;gap:10px;margin:0 0 8px}
+.hab h3 em{font-style:normal;font-size:1.9rem;line-height:1}
+.hab ul{list-style:none;margin:0;padding:0}
+.hab li{display:flex;gap:10px;padding:7px 0;border-top:1px dashed color-mix(in srgb,var(--c) 30%,var(--ln))}
+.hab li::before{content:"\2713";color:var(--c);font-weight:700;flex:none}
+.hab.bad li::before{content:"\2717"}
+.hab small{display:block;color:var(--mut)}
