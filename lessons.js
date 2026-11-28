@@ -8,5 +8,6 @@ var LESSONS={
 37:"Thể bị động",
 38:"Danh từ hóa với の",
 39:"Nguyên nhân với 〜て, 〜ので",
-40:"Câu nghi vấn lồng, 〜てみます"
+40:"Câu nghi vấn lồng, 〜てみます",
+41:"Cho nhận: いただく, くださる, やる"
 };

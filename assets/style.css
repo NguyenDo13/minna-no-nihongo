@@ -111,3 +111,13 @@ a.chip{text-decoration:none;color:inherit}
 .calc small{display:block;font-size:.72rem;color:var(--mut);min-height:1em}
 .pat{display:block;width:56px;height:56px;margin:0 auto 6px;border:1px solid var(--ln);border-radius:8px;background-color:var(--sf);font-size:1.3rem;line-height:56px;text-align:center;letter-spacing:2px;overflow:hidden}
 .ico svg{display:block;margin:0 auto;color:var(--blue)}
+.bb{display:grid;gap:18px 14px;margin-top:8px}
+@media(min-width:720px){.bb{grid-template-columns:1fr 1fr}}
+.pn{--c:hsl(var(--h) 70% 50%);position:relative;padding:20px 16px 14px;border-radius:8px;border:1px solid color-mix(in srgb,var(--c) 40%,var(--ln));background:color-mix(in srgb,var(--c) 11%,var(--sf));box-shadow:0 3px 0 color-mix(in srgb,var(--c) 18%,transparent)}
+.pn::before{content:"\1F4CC";position:absolute;top:-11px;left:14px;font-size:1.25rem;line-height:1}
+.pn h4{margin:0 0 2px;font-size:1.1rem;line-height:1.9}
+.pn .tg{color:var(--mut);font-size:.82rem;margin-bottom:8px}
+.pn ul{list-style:none;margin:0;padding:0}
+.pn li{padding:6px 0;border-top:1px dashed color-mix(in srgb,var(--c) 35%,var(--ln))}
+.pn li small{display:block;color:var(--mut)}
+.pn .tel{margin-top:8px;font-weight:600;color:var(--c)}
