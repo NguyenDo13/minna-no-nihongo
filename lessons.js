@@ -9,5 +9,6 @@ var LESSONS={
 38:"Danh từ hóa với の",
 39:"Nguyên nhân với 〜て, 〜ので",
 40:"Câu nghi vấn lồng, 〜てみます",
-41:"Cho nhận: いただく, くださる, やる"
+41:"Cho nhận: いただく, くださる, やる",
+42:"Mục đích: 〜ために, 〜のに và 〜に よって"
 };
